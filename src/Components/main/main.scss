@@ -1,0 +1,69 @@
+.search {
+  display: flex;
+  margin: 10px 0;
+
+  &-input {
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    border-radius: 10px;
+
+    &:focus {
+      border-color: #dbdbdb;
+    }
+  }
+
+  &-btn {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+
+    &:hover {
+      background: darken(#5ac1f1, 6%);
+    }
+  
+    &:active {
+      background: darken(#1352ff, 10%);
+    }
+  }
+}
+
+.fetching {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 30vh auto;
+  border: 2px dashed red;
+  animation-name: search-fetching;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes search-fetching{
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+.pages {
+  margin: 20px 0;
+
+  .page, .current-page{
+    border: 1px solid lightgray;
+    border-radius: 100%;
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer
+  }
+
+  .current-page {
+    border: 2px solid gray;
+    font-weight: 700;
+  }
+}
